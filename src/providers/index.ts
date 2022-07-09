@@ -1,9 +1,9 @@
-import { UsersService } from "./users.service";
+import { EmailsService } from "./emails.service";
 
 export {
-    UsersService
+    EmailsService
 };
 
 export default [
-    UsersService
+    EmailsService
 ]

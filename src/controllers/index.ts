@@ -1,9 +1,5 @@
-import { UsersController } from "./users.controller";
+import { EmailsController } from "./emails.controller";
 
-export {
-    UsersController
-};
+export { EmailsController };
 
-export default [
-    UsersController
-]
+export default [EmailsController];

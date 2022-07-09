@@ -1,12 +1,8 @@
-FROM node:12.16.3-alpine
-COPY /dist ./
-COPY /package.json ./
-COPY /package-lock.json ./
-COPY /.env ./
-RUN apk add git && \
-        npm i -g typescript@3.8.3 && \
-        tsc -v && \
-        npm i && \
-        #npm i --production && \
-        ls -la
-CMD ["node", "main.js"]
+FROM node:16.13.0
+WORKDIR /usr/src/app
+COPY package*.json ./
+RUN npm install
+RUN npm install -g @nestjs/cli@8.1.2
+COPY . .
+RUN npm run build
+CMD [ "node", "dist/main.js" ]
